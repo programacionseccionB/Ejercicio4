@@ -40,8 +40,9 @@ public class ArbolEjercicio4 {
         //Se imprime el arbol o la red en forma Preorden
         System.out.println("\nRed o Arbol de distribución de señal recorrida en Preorden");
         arbol.recorridoPreorden();
+        System.out.println("\nTotal de Leads: "+arbol.sumaNodosNivel2(1));
         //Se suman todos los nodos del nivel 1 para abajo en el arbol
-        System.out.println("\nEl total de ingreso Proyectado del nuevo proyecto x contratos sería de: Q."+arbol.sumaGanancias(nivelSuma));
+        System.out.println("\nEl total de ingreso Proyectado x contratos sería de: Q."+arbol.sumaGanancias(nivelSuma));
     
     }
 }
