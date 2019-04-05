@@ -39,10 +39,15 @@ public class ArbolEjercicio4 {
               
         do{ 
             valor = Integer.parseInt(JOptionPane.showInputDialog("Ingrese # contratos en sector " + i));
-            arbol.insertarNodo(valor); 
-            arreglo.add(valor);
-            height = arbol.retornarAltura();
-            i++;
+            if(valor<=10){
+                arbol.insertarNodo(valor); 
+                arreglo.add(valor);
+                height = arbol.retornarAltura();
+                i++;
+            }else{
+                System.out.println("Intentelo nuevamente;");
+            }
+            
         }while(height<=3);
         
         //Se muestran los nodos del arbol insertados en un arraylist
