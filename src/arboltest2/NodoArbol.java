@@ -50,7 +50,7 @@ public class NodoArbol {
 class Arbol
 {
     private NodoArbol raiz;
-     
+    int altura; 
     //construir un arbol vacio
     public Arbol()
     {
@@ -161,4 +161,19 @@ class Arbol
         
     }
     
+    public synchronized int retornarAltura() {
+        altura = 0;
+        retornarAltura(raiz, 0);
+        return altura;
+    }
+
+    private void retornarAltura(NodoArbol reco, int nivel) {
+        if (reco != null) {
+            retornarAltura(reco.nodoizquierdo, nivel + 1);
+            if (nivel > altura) {
+                altura = nivel;
+            }
+            retornarAltura(reco.nododerecho, nivel + 1);
+        }
+    }
 }

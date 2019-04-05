@@ -15,10 +15,12 @@ import javax.swing.JOptionPane;
 public class ArbolEjercicio4 {
     public static void main(String[] args) {
         Arbol arbol = new Arbol();
-        int valor;
-        int nivelSuma =1;
-        int n; 
+        int valor = 0;
+        int nivelSuma = 1;
+        int i = 0;
+        int height = 0;
         ArrayList<Integer> arreglo = new ArrayList<>();
+        /*
         //Se solicita el numero total de nodos que va tener la red al inicio
         n = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero de nodos que tiene la red de señal en Colonia el Porvenir: "));
         //Se inserta el número de contratos conseguidos en cada nodo de la red
@@ -33,16 +35,26 @@ public class ArbolEjercicio4 {
                         System.out.println("Intentelo nuevamente;");
                     }  
             }while(valor>10);
-        }
+        }*/
+              
+        do{ 
+            valor = Integer.parseInt(JOptionPane.showInputDialog("Ingrese # contratos en sector " + i));
+            arbol.insertarNodo(valor); 
+            arreglo.add(valor);
+            height = arbol.retornarAltura();
+            i++;
+        }while(height<=3);
+        
         //Se muestran los nodos del arbol insertados en un arraylist
         System.out.println("Valores insertados: ");
         arreglo.forEach((num) -> System.out.println(num)); 
         //Se imprime el arbol o la red en forma Preorden
         System.out.println("\nRed o Arbol de distribución de señal recorrida en Preorden");
         arbol.recorridoPreorden();
-        System.out.println("\nTotal de Leads: "+arbol.sumaNodosNivel2(1));
+        System.out.println("\nTotal de Leads: "+arbol.sumaNodosNivel2(nivelSuma));
         //Se suman todos los nodos del nivel 1 para abajo en el arbol
         System.out.println("\nEl total de ingreso Proyectado x contratos sería de: Q."+arbol.sumaGanancias(nivelSuma));
-    
+        /*int sumatoria = arbol.getAddition(new NodoArbol(6));
+        System.out.println(sumatoria);*/
     }
 }
